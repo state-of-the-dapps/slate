@@ -20,6 +20,13 @@ You can view code examples in the dark area to the right.
 This example API documentation page was created with [Slate](https://github.com/lord/slate).
 
 ## Technical facts
+
+> **API Endpoint**
+
+```
+https://api.stateofthedapps.com/
+```
+
 * Content-type: `application/json`
 * CDN Cache strategy: 5 minutes
 * Data refresh interval: 30 minutes
@@ -40,7 +47,39 @@ curl "https://api.stateofthedapps.com/dapps"
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+  "items": [
+    {
+      "categories": [
+        "social"
+      ],
+      "created": "2018-12-16",
+      "iconUrl": "https://cdn.stateofthedapps.com/dapps/steemit/icon_steemit_af91cb339644dd9cb2bc612d0281686547c0197ad2e1bb282bba749ae5da1785_opti.png",
+      "iconSmallUrl": "https://cdn.stateofthedapps.com/dapps/steemit/icon_small_steemit_b8baea4a2e2917c3321ada0829f8b6865bc440c15af99a86a99ba75594bd98a1_opti.png",
+      "imageKeyVisual": "",
+      "imageKeyVisualSmall": "",
+      "isNew": false,
+      "name": "Steemit",
+      "platform": "Steem",
+      "rank": 1,
+      "rankDelta": 1,
+      "slug": "steemit",
+      "sparklines": {
+        "users": []
+      },
+      "stats": {
+        "dau": 5352
+      },
+      "teaser": "Social blogging platform"
+    },
+    { ... }
+  ],
+  "pager": {
+    "totalCount": 2218,
+    "limit": 50,
+    "offset": 0
+  }
+}
 ```
 
 ### HTTP Request
@@ -63,18 +102,197 @@ curl "https://api.stateofthedapps.com/dapps"
 ## Get a Specific DApp
 
 ```shell
-curl "https://api.stateofthedapps.com/dapps/<slug>"
+curl "https://api.stateofthedapps.com/dapps/augur"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{}
+{
+  "item": {
+    "alert": "",
+    "audits": [],
+    "authors": ["Jack Peterson", "Joey Krug"],
+    "badges": [],
+    "categories": ["exchanges"],
+    "contractsKovan": [],
+    "contractsMainnet": ["0xb3337164e91b9f05c87c7662c7ac684e8e0ff3e7", ...],
+    "contractsRinkeby": [],
+    "contractsRopsten": [],
+    "contractsPoaMainnet": [],
+    "contractsGoChainMainnet": [],
+    "contractsXDaiMainnet": [],
+    "contractsEosMainnet": [],
+    "contractsSteemMainnet": [],
+    "created": "2015-08-15",
+    "description": "Augur allows users to create prediction markets on the outcome of any future event. Trade on the outcome of an upcoming election, hedge against natural disasters and market crashes.\n\nCompanies can use Augur to guide decision making by forecasting vital information such as total product sales and project completion times.\n\nThere are no limits on what events can be created and traded on. If you want to trade on it, a market can be created for it. Augur is a permissionless protocol built on top of the Ethereum blockchain. Anyone, anywhere in the world can participate.",
+    "iconUrl": "https://cdn.stateofthedapps.com/dapps/augur/icon_augur_f412c0212bbbadf73dfd57a36d557128c4ab2455c35c904fb75b1485cf5d9966_opti.png",
+    "iconSmallUrl": "https://cdn.stateofthedapps.com/dapps/augur/icon_small_augur_1a1dbce16d0d1b4738fe6cf4c166e9f0473033e35eb4080c1862172d570c840f_opti.png",
+    "isNew": false,
+    "isNsfw": false,
+    "lastUpdated": "2019-01-21",
+    "license": "GPL",
+    "logoUrl": "https://cdn.stateofthedapps.com/dapps/augur/logo_augur_671f1d1d8b0c845ce2a264d0b86f20bffdefcc229d0c4e55281dbabae5790768_opti.jpg",
+    "name": "Augur",
+    "nofollow": false,
+    "platform": "Ethereum",
+    "productImage": "https://cdn.stateofthedapps.com/dapps/augur/product_image_augur_bf73d2b2ec4a6d57f7c706f419557e78f8eceeba5e7212a493513da831b24e9a_opti.jpg",
+    "productImageSmall": "https://cdn.stateofthedapps.com/dapps/augur/product_image_small_augur_c49b37b5f809ed0eb272ccf3206b4dd171262770b97e7fc2dd04004fcccc3284_opti.jpg",
+    "profileScore": 1.0,
+    "rank": 33,
+    "rankDelta": -1,
+    "relatedDapps": [{
+      "name": "Gnosis",
+      "categories": ["exchanges"],
+      "iconUrl": "https://cdn.stateofthedapps.com/dapps/gnosis/icon_gnosis_7128ae7885c96a248446636810c20cfb31799baf6c6df4fcef69505088ef13a6_opti.png",
+      "iconSmallUrl": "https://cdn.stateofthedapps.com/dapps/gnosis/icon_gnosis_7128ae7885c96a248446636810c20cfb31799baf6c6df4fcef69505088ef13a6_opti.png",
+      "slug": "gnosis",
+      "teaser": "Prediction market platform"
+    }, { ... }],
+    "reviews": [],
+    "sites": {
+      "websiteUrl": "http://www.augur.net/",
+      "dappUrl": "https://dev.augur.net/",
+      "androidUrl": "",
+      "iosUrl": ""
+    },
+    "slug": "augur",
+    "socials": [{
+      "platform": "github",
+      "url": "https://github.com/AugurProject"
+    }, {
+      "platform": "reddit",
+      "url": "https://www.reddit.com/r/augur"
+    }, {
+      "platform": "chat",
+      "url": "http://invite.augur.net/"
+    }, {
+      "platform": "blog",
+      "url": "https://medium.com/@augurproject"
+    }, {
+      "platform": "twitter",
+      "url": "https://twitter.com/AugurProject"
+    }, {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/augurproject"
+    }],
+    "sparklines": {
+      "users": [146, 122, 140, 116, 105, 84, 95, 124, 93, 158, 105, 98, 89, 85, 101, 77, 140, 204, 103, 113, 102, 203, 173, 132, 103, 133, 149, 104, 170, 125],
+      "transactions": [367, 304, 340, 249, 257, 263, 256, 303, 232, 297, 271, 199, 315, 221, 285, 189, 295, 490, 313, 286, 297, 613, 490, 373, 357, 550, 463, 345, 646, 376],
+      "value": [21.06935988933668, 101.32061466801004, 20.584593834005023, 34.04320683754522, 84.31616995798343, 44.78567616874754, 15.68848322628699, 54.00712759740337, 53.28368897921183, 16.238432270108266, 34.099599131003316, 23.27206083611255, 89.55256387754584, 49.4807641395691, 25.732853903566248, 8.515336536790278, 101.31670744147316, 40.60623474602912, 30.617434171221426, 42.59837559924722, 43.6447530618896, 49.81445816545752, 63.06701575776657, 148.03975408661537, 97.0255831147726, 262.1103648556857, 218.6820398275529, 511.8279279223417, 314.1800572815031, 105.27810843612464],
+      "poa_value": [0, ...],
+      "gochain_value": [0, ...],
+      "xdai_value": [0, ...],
+      "eos_value": [0, ...],
+      "steem_value": [0, ...],
+      "gh_events": [9, 57, 104, 63, 116, 78, 17, 12, 0, 0, 25, 123, 105, 17, 19, 131, 108, 165, 74, 114, 40, 40, 105, 213, 146, 117, 104, 28, 22, 202]
+    },
+    "stats": {
+      "ctr": 0.3926218708827404,
+      "positive": 1,
+      "negative": 0,
+      "neutral": 0,
+      "impressions": 759,
+      "clicks": 298,
+      "flagged": 0,
+      "shared": 0,
+      "suggested": 1,
+      "dau": 125,
+      "dau_pct": -26.470588235294116,
+      "mau": 1948,
+      "mau_pct": -22.85148514851485,
+      "tx_1d": 376,
+      "tx_30d": 10242,
+      "tx_7d": 3110,
+      "value_1d": 105.27810843612464,
+      "value_30d": 2704.7993463209064,
+      "value_7d": 1657.143835524596,
+      "value_7d_pct": 345.87032123313526,
+      "wau": 574,
+      "dev_30d": 2354,
+      "dev_30d_pct": -2.6065370293752586,
+      "dev_90d": 6812,
+      "listed": 0,
+      "rating": 0.20654329147389294,
+      "votes": 1,
+      "star_rating": 5.0,
+      "poa_value_7d": 0,
+      "poa_value_7d_pct": null,
+      "wau_pct": -19.382022471910112,
+      "poa_value_1d": 0,
+      "poa_value_1d_pct": null,
+      "poa_value_30d": 0,
+      "poa_value_30d_pct": null,
+      "value_1d_pct": -66.49115499339406,
+      "value_30d_pct": -74.27833556408879,
+      "eos_value_1d": 0,
+      "eos_value_1d_pct": null,
+      "eos_value_30d": 0,
+      "eos_value_30d_pct": null,
+      "eos_value_7d": 0,
+      "eos_value_7d_pct": null,
+      "usd_value_1d": 14612.601450934102,
+      "usd_value_30d": 375426.14926934184,
+      "usd_value_7d": 230011.56437081393,
+      "steem_value_1d": 0,
+      "steem_value_1d_pct": null,
+      "steem_value_30d": 0,
+      "steem_value_30d_pct": null,
+      "steem_value_7d": 0,
+      "steem_value_7d_pct": null,
+      "gochain_value_1d": 0,
+      "gochain_value_1d_pct": null,
+      "gochain_value_30d": 0,
+      "gochain_value_30d_pct": null,
+      "gochain_value_7d": 0,
+      "gochain_value_7d_pct": null,
+      "xdai_value_1d": 0,
+      "xdai_value_1d_pct": null,
+      "xdai_value_30d": 0,
+      "xdai_value_30d_pct": null,
+      "xdai_value_7d": 0,
+      "xdai_value_7d_pct": null
+    },
+    "status": "live",
+    "tags": ["prediction", "market", "forecasting", "trading", "profits"],
+    "teaser": "Decentralized prediction market"
+  }
+}
 ```
 
 ### HTTP Request
 
 `GET https://api.stateofthedapps.com/dapps/<slug>`
+
+
+## Lookup a DApp by Name or Address
+
+Use this to check if a DApp exists with the given name or contract address. With the returned `slug` the dapp details can be found using [`/dapps/<slug>`](#get-a-specific-dapp)
+
+```shell
+curl "https://api.stateofthedapps.com/dapps/lookup?name=Status"
+
+curl "https://api.stateofthedapps.com/dapps/lookup?address=0xd248B0D48E44aaF9c49aea0312be7E13a6dc1468"
+```
+
+> The above commands return JSON structured like this:
+
+```json
+{"item": {"slug": "status"}}
+```
+
+### HTTP Request
+
+`GET https://api.stateofthedapps.com/dapps/lookup`
+
+### Query Parameters
+
+Parameter | Description
+--------- | --------------
+name      | The name to lookup if a dapp exists
+address   | The contract address to lookup if a dapp exists
+
+If no match is found, a HTTP 404 is returned.
 
 
 # Tags
