@@ -279,7 +279,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the State of the DApps API! You can use our API to access State of the DApps API endpoints, which can get information on various dapps and statistics in our database.</p>
 
-<p>You can view code examples in the dark area to the right</p>
+<p>You can view code examples in the dark area to the right.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>.</p>
 <h2 id='technical-facts'>Technical facts</h2>
@@ -320,25 +320,86 @@
 <pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/dapps/&lt;slug&gt;</code></p>
-<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/tags"</span>
+<h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2>
+<p>Returns the tags that are associated with dapps, sorted by popularity in descending order.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/tags"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"integrity"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"teaching"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"merchant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"risk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tickets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"open-source"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"skills"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"companies"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"elections"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subcurrency"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"protection"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forum"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"auction"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"economics"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"credit"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/tags</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
-<ul>
-<li>text=abc</li>
-<li>limit=12</li>
-</ul>
-<h1 id='categories'>Categories</h1><h2 id='get-all-categories'>Get All Categories</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/categories"</span>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td><em>none</em></td>
+<td>Filter tags matching the provided string, case insensitive</td>
+</tr>
+<tr>
+<td>type</td>
+<td><em>none</em></td>
+<td>For which data type to return the tags, should be <code>dapps</code></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>15</td>
+<td>The maximum number of tags to return</td>
+</tr>
+</tbody></table>
+<h1 id='categories'>Categories</h1><h2 id='get-all-categories'>Get All Categories</h2>
+<p>Returns the categories and how many dapps they contain, sorted by usage in descending order.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/categories"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Games"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"games"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dappCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">521</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gambling"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gambling"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dappCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"social"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dappCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">284</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finance"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finance"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dappCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">275</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/categories</code></p>
 <h1 id='statistics'>Statistics</h1>
@@ -395,11 +456,13 @@
    </span><span class="s2">"dappTx30D"</span><span class="p">:</span><span class="w"> </span><span class="mi">92667</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code>category</code> the name of the category.
-<code>dappCount</code> the total number of DApps for this <code>category</code>.
-<code>dappContractCount</code> the total number of DApps contracts for this <code>category</code>.
-<code>dappMau</code> the monthly (last 30 days) active user count for all DApps of this <code>category</code>. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.
-<code>dappTx30D</code> the number of transations  for all DApps of this <code>category</code> in the last 30 days.</p>
+<ul>
+<li><code>category</code> the name of the category.</li>
+<li><code>dappCount</code> the total number of DApps for this <code>category</code>.</li>
+<li><code>dappContractCount</code> the total number of DApps contracts for this <code>category</code>.</li>
+<li><code>dappMau</code> the monthly (last 30 days) active user count for all DApps of this <code>category</code>. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.</li>
+<li><code>dappTx30D</code> the number of transations  for all DApps of this <code>category</code> in the last 30 days.</li>
+</ul>
 <h3 id='platforms-list'>Platforms list</h3>
 <p><code>platforms</code> breakdown per platform, array of documents with the format:</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -413,14 +476,16 @@
     </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code>platform</code> the name of the platform.
-<code>dappCount</code> the total number of DApps for this <code>platform</code>.
-<code>dappContractCount</code> the total number of DApps contracts for this <code>platform</code>.
-<code>dappDau</code> the daily (last 24h) active user count for all DApps of this <code>platform</code>. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.
-<code>dappTx24Hr</code> the number of transations  for all DApps of this <code>platform</code> in the last 24h.
-<code>dappVol24Hr</code> the transaction volume of all dapps of this <code>platform</code>, in the platform native currency, for the last 24h. We only count the native (ETH, EOS, POA) value of transfers sent TO a dapp, not any token values.
-<code>dappUSDVol24Hr</code> the transaction volume of all dapps of this <code>platform</code> combined, converted to USD, in the last 24h. We only the native (ETH, EOS, POA) value of transfers sent TO a dapp.
-<code>categories</code> breakdown of the number of dapps per <code>category</code> for this <code>platform</code>, (transaction statistics only for Ethereum), array of documents with the above documented <code>categories</code> format.</p>
+<ul>
+<li><code>platform</code> the name of the platform.</li>
+<li><code>dappCount</code> the total number of DApps for this <code>platform</code>.</li>
+<li><code>dappContractCount</code> the total number of DApps contracts for this <code>platform</code>.</li>
+<li><code>dappDau</code> the daily (last 24h) active user count for all DApps of this <code>platform</code>. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.</li>
+<li><code>dappTx24Hr</code> the number of transations  for all DApps of this <code>platform</code> in the last 24h.</li>
+<li><code>dappVol24Hr</code> the transaction volume of all dapps of this <code>platform</code>, in the platform native currency, for the last 24h. We only count the native (ETH, EOS, POA) value of transfers sent TO a dapp, not any token values.</li>
+<li><code>dappUSDVol24Hr</code> the transaction volume of all dapps of this <code>platform</code> combined, converted to USD, in the last 24h. We only the native (ETH, EOS, POA) value of transfers sent TO a dapp.</li>
+<li><code>categories</code> breakdown of the number of dapps per <code>category</code> for this <code>platform</code>, (transaction statistics only for Ethereum), array of documents with the above documented <code>categories</code> format.</li>
+</ul>
 <h2 id='known-issues-limitations'>Known issues / Limitations</h2>
 <ul>
 <li>DApp growth figures aren’t exposed yet via this API, but this is expected to be added Soon. Bug us for raising the priority of this.</li>
