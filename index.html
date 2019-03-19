@@ -238,6 +238,9 @@
                   <li>
                     <a href="#get-a-specific-dapp" class="toc-h2 toc-link" data-title="Get a Specific DApp">Get a Specific DApp</a>
                   </li>
+                  <li>
+                    <a href="#lookup-a-dapp-by-name-or-address" class="toc-h2 toc-link" data-title="Lookup a DApp by Name or Address">Lookup a DApp by Name or Address</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -283,6 +286,11 @@
 
 <p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>.</p>
 <h2 id='technical-facts'>Technical facts</h2>
+<blockquote>
+<p><strong>API Endpoint</strong></p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://api.stateofthedapps.com/
+</code></pre>
 <ul>
 <li>Content-type: <code>application/json</code></li>
 <li>CDN Cache strategy: 5 minutes</li>
@@ -296,7 +304,39 @@
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"social"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-16"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/steemit/icon_steemit_af91cb339644dd9cb2bc612d0281686547c0197ad2e1bb282bba749ae5da1785_opti.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconSmallUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/steemit/icon_small_steemit_b8baea4a2e2917c3321ada0829f8b6865bc440c15af99a86a99ba75594bd98a1_opti.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"imageKeyVisual"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"imageKeyVisualSmall"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"isNew"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steemit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steem"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rankDelta"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"steemit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sparklines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"dau"</span><span class="p">:</span><span class="w"> </span><span class="mi">5352</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"teaser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Social blogging platform"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"pager"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2218</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/dapps</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -312,14 +352,193 @@
 <li>tags=a,b,c / tags[]=a&amp;tags[]=b</li>
 <li>text=abc</li>
 </ul>
-<h2 id='get-a-specific-dapp'>Get a Specific DApp</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/dapps/&lt;slug&gt;"</span>
+<h2 id='get-a-specific-dapp'>Get a Specific DApp</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/dapps/augur"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"alert"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"audits"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Jack Peterson"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Joey Krug"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"badges"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exchanges"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"contractsKovan"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"0xb3337164e91b9f05c87c7662c7ac684e8e0ff3e7"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"contractsRinkeby"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsRopsten"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsPoaMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsGoChainMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsXDaiMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsEosMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"contractsSteemMainnet"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-15"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Augur allows users to create prediction markets on the outcome of any future event. Trade on the outcome of an upcoming election, hedge against natural disasters and market crashes.</span><span class="se">\n\n</span><span class="s2">Companies can use Augur to guide decision making by forecasting vital information such as total product sales and project completion times.</span><span class="se">\n\n</span><span class="s2">There are no limits on what events can be created and traded on. If you want to trade on it, a market can be created for it. Augur is a permissionless protocol built on top of the Ethereum blockchain. Anyone, anywhere in the world can participate."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/augur/icon_augur_f412c0212bbbadf73dfd57a36d557128c4ab2455c35c904fb75b1485cf5d9966_opti.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iconSmallUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/augur/icon_small_augur_1a1dbce16d0d1b4738fe6cf4c166e9f0473033e35eb4080c1862172d570c840f_opti.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isNew"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isNsfw"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-21"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/augur/logo_augur_671f1d1d8b0c845ce2a264d0b86f20bffdefcc229d0c4e55281dbabae5790768_opti.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Augur"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nofollow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethereum"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/augur/product_image_augur_bf73d2b2ec4a6d57f7c706f419557e78f8eceeba5e7212a493513da831b24e9a_opti.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productImageSmall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/augur/product_image_small_augur_c49b37b5f809ed0eb272ccf3206b4dd171262770b97e7fc2dd04004fcccc3284_opti.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profileScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rankDelta"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"relatedDapps"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gnosis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"exchanges"</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/gnosis/icon_gnosis_7128ae7885c96a248446636810c20cfb31799baf6c6df4fcef69505088ef13a6_opti.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iconSmallUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.stateofthedapps.com/dapps/gnosis/icon_gnosis_7128ae7885c96a248446636810c20cfb31799baf6c6df4fcef69505088ef13a6_opti.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gnosis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"teaser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prediction market platform"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"sites"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"websiteUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.augur.net/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dappUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://dev.augur.net/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"androidUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"iosUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"augur"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"socials"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/AugurProject"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reddit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.reddit.com/r/augur"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://invite.augur.net/"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blog"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://medium.com/@augurproject"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"twitter"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://twitter.com/AugurProject"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"facebook"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.facebook.com/augurproject"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"sparklines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">146</span><span class="p">,</span><span class="w"> </span><span class="mi">122</span><span class="p">,</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w"> </span><span class="mi">89</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">140</span><span class="p">,</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">113</span><span class="p">,</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w"> </span><span class="mi">203</span><span class="p">,</span><span class="w"> </span><span class="mi">173</span><span class="p">,</span><span class="w"> </span><span class="mi">132</span><span class="p">,</span><span class="w"> </span><span class="mi">103</span><span class="p">,</span><span class="w"> </span><span class="mi">133</span><span class="p">,</span><span class="w"> </span><span class="mi">149</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">170</span><span class="p">,</span><span class="w"> </span><span class="mi">125</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">367</span><span class="p">,</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w"> </span><span class="mi">340</span><span class="p">,</span><span class="w"> </span><span class="mi">249</span><span class="p">,</span><span class="w"> </span><span class="mi">257</span><span class="p">,</span><span class="w"> </span><span class="mi">263</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">303</span><span class="p">,</span><span class="w"> </span><span class="mi">232</span><span class="p">,</span><span class="w"> </span><span class="mi">297</span><span class="p">,</span><span class="w"> </span><span class="mi">271</span><span class="p">,</span><span class="w"> </span><span class="mi">199</span><span class="p">,</span><span class="w"> </span><span class="mi">315</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">285</span><span class="p">,</span><span class="w"> </span><span class="mi">189</span><span class="p">,</span><span class="w"> </span><span class="mi">295</span><span class="p">,</span><span class="w"> </span><span class="mi">490</span><span class="p">,</span><span class="w"> </span><span class="mi">313</span><span class="p">,</span><span class="w"> </span><span class="mi">286</span><span class="p">,</span><span class="w"> </span><span class="mi">297</span><span class="p">,</span><span class="w"> </span><span class="mi">613</span><span class="p">,</span><span class="w"> </span><span class="mi">490</span><span class="p">,</span><span class="w"> </span><span class="mi">373</span><span class="p">,</span><span class="w"> </span><span class="mi">357</span><span class="p">,</span><span class="w"> </span><span class="mi">550</span><span class="p">,</span><span class="w"> </span><span class="mi">463</span><span class="p">,</span><span class="w"> </span><span class="mi">345</span><span class="p">,</span><span class="w"> </span><span class="mi">646</span><span class="p">,</span><span class="w"> </span><span class="mi">376</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">21.06935988933668</span><span class="p">,</span><span class="w"> </span><span class="mf">101.32061466801004</span><span class="p">,</span><span class="w"> </span><span class="mf">20.584593834005023</span><span class="p">,</span><span class="w"> </span><span class="mf">34.04320683754522</span><span class="p">,</span><span class="w"> </span><span class="mf">84.31616995798343</span><span class="p">,</span><span class="w"> </span><span class="mf">44.78567616874754</span><span class="p">,</span><span class="w"> </span><span class="mf">15.68848322628699</span><span class="p">,</span><span class="w"> </span><span class="mf">54.00712759740337</span><span class="p">,</span><span class="w"> </span><span class="mf">53.28368897921183</span><span class="p">,</span><span class="w"> </span><span class="mf">16.238432270108266</span><span class="p">,</span><span class="w"> </span><span class="mf">34.099599131003316</span><span class="p">,</span><span class="w"> </span><span class="mf">23.27206083611255</span><span class="p">,</span><span class="w"> </span><span class="mf">89.55256387754584</span><span class="p">,</span><span class="w"> </span><span class="mf">49.4807641395691</span><span class="p">,</span><span class="w"> </span><span class="mf">25.732853903566248</span><span class="p">,</span><span class="w"> </span><span class="mf">8.515336536790278</span><span class="p">,</span><span class="w"> </span><span class="mf">101.31670744147316</span><span class="p">,</span><span class="w"> </span><span class="mf">40.60623474602912</span><span class="p">,</span><span class="w"> </span><span class="mf">30.617434171221426</span><span class="p">,</span><span class="w"> </span><span class="mf">42.59837559924722</span><span class="p">,</span><span class="w"> </span><span class="mf">43.6447530618896</span><span class="p">,</span><span class="w"> </span><span class="mf">49.81445816545752</span><span class="p">,</span><span class="w"> </span><span class="mf">63.06701575776657</span><span class="p">,</span><span class="w"> </span><span class="mf">148.03975408661537</span><span class="p">,</span><span class="w"> </span><span class="mf">97.0255831147726</span><span class="p">,</span><span class="w"> </span><span class="mf">262.1103648556857</span><span class="p">,</span><span class="w"> </span><span class="mf">218.6820398275529</span><span class="p">,</span><span class="w"> </span><span class="mf">511.8279279223417</span><span class="p">,</span><span class="w"> </span><span class="mf">314.1800572815031</span><span class="p">,</span><span class="w"> </span><span class="mf">105.27810843612464</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"poa_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"gochain_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"xdai_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"eos_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"steem_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"gh_events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">57</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">131</span><span class="p">,</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">,</span><span class="w"> </span><span class="mi">213</span><span class="p">,</span><span class="w"> </span><span class="mi">146</span><span class="p">,</span><span class="w"> </span><span class="mi">117</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">202</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ctr"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3926218708827404</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"impressions"</span><span class="p">:</span><span class="w"> </span><span class="mi">759</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clicks"</span><span class="p">:</span><span class="w"> </span><span class="mi">298</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"flagged"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"shared"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"suggested"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dau"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dau_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-26.470588235294116</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mau"</span><span class="p">:</span><span class="w"> </span><span class="mi">1948</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mau_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.85148514851485</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tx_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">376</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tx_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">10242</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tx_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">3110</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mf">105.27810843612464</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">2704.7993463209064</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">1657.143835524596</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">345.87032123313526</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wau"</span><span class="p">:</span><span class="w"> </span><span class="mi">574</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dev_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">2354</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dev_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.6065370293752586</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dev_90d"</span><span class="p">:</span><span class="w"> </span><span class="mi">6812</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"listed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20654329147389294</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"votes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"star_rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"wau_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.382022471910112</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"poa_value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-66.49115499339406</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">-74.27833556408879</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"eos_value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"usd_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mf">14612.601450934102</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"usd_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">375426.14926934184</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"usd_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">230011.56437081393</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"steem_value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gochain_value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_1d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_1d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_30d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_30d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_7d"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xdai_value_7d_pct"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"prediction"</span><span class="p">,</span><span class="w"> </span><span class="s2">"market"</span><span class="p">,</span><span class="w"> </span><span class="s2">"forecasting"</span><span class="p">,</span><span class="w"> </span><span class="s2">"trading"</span><span class="p">,</span><span class="w"> </span><span class="s2">"profits"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"teaser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Decentralized prediction market"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/dapps/&lt;slug&gt;</code></p>
+<h2 id='lookup-a-dapp-by-name-or-address'>Lookup a DApp by Name or Address</h2>
+<p>Use this to check if a DApp exists with the given name or contract address. With the returned <code>slug</code> the dapp details can be found using <a href="#get-a-specific-dapp"><code>/dapps/&lt;slug&gt;</code></a></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/dapps/lookup?name=Status"</span>
+
+curl <span class="s2">"https://api.stateofthedapps.com/dapps/lookup?address=0xd248B0D48E44aaF9c49aea0312be7E13a6dc1468"</span>
+</code></pre>
+<blockquote>
+<p>The above commands return JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="p">}}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.stateofthedapps.com/dapps/lookup</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name to lookup if a dapp exists</td>
+</tr>
+<tr>
+<td>address</td>
+<td>The contract address to lookup if a dapp exists</td>
+</tr>
+</tbody></table>
+
+<p>If no match is found, a HTTP 404 is returned.</p>
 <h1 id='tags'>Tags</h1><h2 id='get-all-tags'>Get All Tags</h2>
 <p>Returns the tags that are associated with dapps, sorted by popularity in descending order.</p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.stateofthedapps.com/tags"</span>
@@ -346,9 +565,9 @@
     </span><span class="s2">"credit"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/tags</code></p>
-<h3 id='query-parameters-2'>Query Parameters</h3>
+<h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -400,7 +619,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/categories</code></p>
 <h1 id='statistics'>Statistics</h1>
 <p>The purpose of the statistics API is to provide high level statistics of the global dapp ecosystem, with breakdown per platform (Ethereum, EOS and POA) and per category.</p>
@@ -420,7 +639,7 @@
     </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
     </span><span class="s2">"platforms"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://api.stateofthedapps.com/stats</code></p>
 <h3 id='response'>Response</h3>
 <p>The above request returns JSON structured like this:</p>
