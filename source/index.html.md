@@ -1,239 +1,230 @@
 ---
-title: API Reference
+title: State of the DApps API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='mailto:support@stateofthedapps.com'>Request a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the State of the DApps API! You can use our API to access State of the DApps API endpoints, which can get information on various dapps and statistics in our database.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+You can view code examples in the dark area to the right
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was created with [Slate](https://github.com/lord/slate).
 
-# Authentication
+## Technical facts
+* Content-type: `application/json`
+* CDN Cache strategy: 5 minutes
+* Data refresh interval: 30 minutes
+* Data source: Infura API (Ethereum & POA), native node (EOS), CryptoCompare (USD exchange rate)
 
-> To authorize, use this code:
+## Usage
+Public, with attribution to State of the DApps (<https://www.stateofthedapps.com/>)
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+# DApps
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+## Get All DApps
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "https://api.stateofthedapps.com/dapps"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{}
 ```
-
-This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://api.stateofthedapps.com/dapps`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+* limit=50
+* offset=0
+* page=1
+* platform=ethereum|eos|poa
+* sort=new|most-viewed|hot|rank|rating|name|dau|mau|vol_7d|dev_30d|usd_value_7d
+* order=asc|desc
+* status=any
+* category=games
+* tags=a,b,c / tags[]=a&tags[]=b
+* text=abc
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get a Specific DApp
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "https://api.stateofthedapps.com/dapps/<slug>"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+{}
 ```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://api.stateofthedapps.com/dapps/<slug>`
 
-### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+# Tags
 
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
+## Get All Tags
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+curl "https://api.stateofthedapps.com/tags"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+{}
 ```
-
-This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`GET https://api.stateofthedapps.com/tags`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+* text=abc
+* limit=12
+
+
+# Categories
+
+## Get All Categories
+
+```shell
+curl "https://api.stateofthedapps.com/categories"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{}
+```
+
+### HTTP Request
+
+`GET https://api.stateofthedapps.com/categories`
+
+
+# Statistics
+
+The purpose of the statistics API is to provide high level statistics of the global dapp ecosystem, with breakdown per platform (Ethereum, EOS and POA) and per category.
+
+## Get All Statistics
+
+```shell
+curl "https://api.stateofthedapps.com/stats"
+```
+
+> The above command returns JSON structured like this (sample as of 2018-12-14, subdocuments ommitted, but documented below):
+
+```json
+{
+    "dappContractCount": 5423,
+    "dappCount": 2307,
+    "dappDau": 42372,
+    "dappTx24Hr": 1034468,
+    "dappVol24Hr": 0,
+    "dappUSDVol24Hr": 17495009.94100345,
+    "statuses": [...],
+    "categories": [...],
+    "platforms": [...]
+}
+```
+
+### HTTP Request
+
+`GET https://api.stateofthedapps.com/stats`
+
+### Response
+
+The above request returns JSON structured like this:
+
+* `dappCount` the total number of DApps on State of the DApps.
+* `dappContractCount` the total number of DApps contracts on State of the DApps.
+* `dappDau` the global daily (last 24h) active user count for DApps of all platforms combined. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.
+* `dappTx24Hr` the global number of transations to DApp contracts of all platform in the last 24h.
+* `dappVol24Hr` (deprecated)
+* `dappUSDVol24Hr` the global transaction volume of all dapps combined, converted to USD, in the last 24h. We only count the native (ETH, EOS, POA) value of transfers sent TO a dapp, not any token values.
+
+
+> `statuses` breakdown of the number of dapps per `status`, array of documents with the format:
+
+```json
+{
+    "dappCount": 1218,
+    "status": "live"
+}
+```
+
+### Statuses list
+
+
+* `status` the name of the status.
+* `dappCount` the total number of DApps with this status.
+
+### Categories list
+
+`categories` breakdown of the number of dapps per `category` (transaction statistics only for Ethereum), array of documents with the format:
+
+```json
+{
+   "category": "storage",
+   "dappCount": 55,
+   "dappContractCount": 19,
+   "dappMau": 78080,
+   "dappTx30D": 92667
+}
+```
+
+`category` the name of the category.
+`dappCount` the total number of DApps for this `category`.
+`dappContractCount` the total number of DApps contracts for this `category`.
+`dappMau` the monthly (last 30 days) active user count for all DApps of this `category`. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.
+`dappTx30D` the number of transations  for all DApps of this `category` in the last 30 days.
+
+### Platforms list
+
+`platforms` breakdown per platform, array of documents with the format:
+
+```json
+{
+    "platform": "ethereum",
+    "dappCount": 2190,
+    "dappContractCount": 5219,
+    "dappDau": 10713,
+    "dappTx24Hr": 55542,
+    "dappVol24Hr": 66580.91393945477,
+    "dappUSDVol24Hr": 5736611.545023423,
+    "categories": [...],
+}
+```
+
+`platform` the name of the platform.
+`dappCount` the total number of DApps for this `platform`.
+`dappContractCount` the total number of DApps contracts for this `platform`.
+`dappDau` the daily (last 24h) active user count for all DApps of this `platform`. Active users are counted by the number of unique source addresses that send a transaction to DApp contracts.
+`dappTx24Hr` the number of transations  for all DApps of this `platform` in the last 24h.
+`dappVol24Hr` the transaction volume of all dapps of this `platform`, in the platform native currency, for the last 24h. We only count the native (ETH, EOS, POA) value of transfers sent TO a dapp, not any token values.
+`dappUSDVol24Hr` the transaction volume of all dapps of this `platform` combined, converted to USD, in the last 24h. We only the native (ETH, EOS, POA) value of transfers sent TO a dapp.
+`categories` breakdown of the number of dapps per `category` for this `platform`, (transaction statistics only for Ethereum), array of documents with the above documented `categories` format.
+
+## Known issues / Limitations
+* DApp growth figures aren’t exposed yet via this API, but this is expected to be added Soon. Bug us for raising the priority of this.
+* Category transaction statistics are only counted for Ethereum and lack USD equivalent values.
+* USD values are calculated with the last known exchange rate.
 
